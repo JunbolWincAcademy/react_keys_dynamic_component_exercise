@@ -1,15 +1,12 @@
 import './App.css'; // this is different
 import './components/DrinkItem.css';
 //import { DrinkButtons } from './components/DrinkButtons'; //this is different DrinkButtons is not in the ui folder
-//well I don't know why it was in the ui folder before
-
-// //import the dataset data
-
-// import { DrinkChoice } from './components/DrinkChoice';
 import { useState } from 'react';
 import { DrinkSearch } from './components/DrinkSearch';
 // import { DrinkItem } from './components/DrinkItem';
 import { DrinkList } from './components/DrinkList';
+import { DrinkChoice } from './components/DrinkChoice';
+import { DrinkItem } from './components/DrinkItem';
 
 export const App = () => {
   const greeting = 'Welcome to our cafe!';
@@ -21,7 +18,7 @@ export const App = () => {
 
   //Create a new const userDrink and assign it the tea or coffee object.
 
-  const [userDrink, setUserDrink] = useState();
+  const [userDrink, setUserDrink] = useState(null);
   //  const userDrink = drink;
   return (
     <div className="App">
@@ -29,17 +26,17 @@ export const App = () => {
         <>
           <h1>{greeting}</h1>
           {/* // Only render DrinkChoice if a drink is selected */}
-          {/* <DrinkItem drink={userDrink} /> */}
+          <DrinkChoice drink={userDrink} />
         </>
       ) : (
-        // <DrinkChoice drink={userDrink} />
+       
         // if not render the following:
         <>
           <h1>{greeting}</h1>
           {/* <DrinkButtons drinkOne={tea.name} drinkTwo={coffee.name} /> */}
           <p>Please select a drink</p>
-          <DrinkSearch />
-          <DrinkList />
+          <DrinkSearch clickFn={setUserDrink} />
+          <DrinkList clickFn={setUserDrink} />
         </>
       )}
     </div>

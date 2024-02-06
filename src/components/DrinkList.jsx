@@ -1,10 +1,10 @@
 import { availableDrinks } from '../utils/data';
 import { DrinkItem } from './DrinkItem';
 
-export const DrinkList = () => {
+export const DrinkList = ({clickFn}) => {
   const drinkItems = availableDrinks.map((item, index) => (
     <li key={index}>
-      <DrinkItem drink={item} />
+      <DrinkItem drink={item} clickFn={clickFn}/>
     </li>
   ));
   return <ul style={{ listStyle: 'none' }}>{drinkItems}</ul>;
@@ -25,7 +25,7 @@ and finally <ul>{drinkItems}</ul> is collection all those <li> in a single list
 
 to get rid of the bullets I used: style={{ listStyle: 'none' }} the outer {} on
 the expression { listStyle: 'none' } the convention in JSX to be able to use Javascript
-expressions and JSX doesnt accept normal expresions like:  style="list-style: none;"
+expressions and JSX doesn't accept normal expression like:  style="list-style: none;"
 to add CSS style to <ul> you need to pass an object to style where the property name 
 is in camelCase (which is the JavaScript convention, since hyphens are not valid in variable names),
  and the property value is a string 'none'. 

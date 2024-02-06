@@ -2,7 +2,7 @@
 export const DrinkChoice = ({ drink }) => {
     return (
         <>
-          <p>{drink.name}</p> {/* Displaying the drink's name */}
+          <p>Your choice:{drink.name}</p> {/* Displaying the drink's name */}
           {/* Displaying the drink's image */}
           <img src={drink.imgUrl} alt={drink.alt} style={{ width: '100px', height: '100px' }} />
           {    /* a bit explanation about how style works in jsx: the style attribute in JSX expects a javascript object.
