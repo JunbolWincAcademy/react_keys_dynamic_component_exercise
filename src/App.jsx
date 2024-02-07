@@ -4,9 +4,9 @@ import './components/DrinkItem.css';
 import { useState } from 'react';
 import { DrinkSearch } from './components/DrinkSearch';
 // import { DrinkItem } from './components/DrinkItem';
-import { DrinkList } from './components/DrinkList';
+// import { DrinkList } from './components/DrinkList';
 import { DrinkChoice } from './components/DrinkChoice';
-import { DrinkItem } from './components/DrinkItem';
+// import { DrinkItem } from './components/DrinkItem';
 import './components/ui/Button.css';
 
 export const App = () => {
