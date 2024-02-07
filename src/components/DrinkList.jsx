@@ -1,8 +1,8 @@
-import { availableDrinks } from '../utils/data';
+// import { availableDrinks } from '../utils/data';
 import { DrinkItem } from './DrinkItem';
 
-export const DrinkList = ({clickFn}) => {
-  const drinkItems = availableDrinks.map((item, index) => (
+export const DrinkList = ({clickFn, drinks}) => {
+  const drinkItems = drinks.map((item, index) => (
     <li key={index}>
       <DrinkItem drink={item} clickFn={clickFn}/>
     </li>

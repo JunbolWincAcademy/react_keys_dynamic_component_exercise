@@ -7,6 +7,7 @@ import { DrinkSearch } from './components/DrinkSearch';
 import { DrinkList } from './components/DrinkList';
 import { DrinkChoice } from './components/DrinkChoice';
 import { DrinkItem } from './components/DrinkItem';
+import './components/ui/Button.css';
 
 export const App = () => {
   const greeting = 'Welcome to our cafe!';
@@ -27,6 +28,7 @@ export const App = () => {
           <h1>{greeting}</h1>
           {/* // Only render DrinkChoice if a drink is selected */}
           <DrinkChoice drink={userDrink} />
+          <button className="button" onClick={() => setUserDrink(null)}>Reset the choice</button>
         </>
       ) : (
        
@@ -36,7 +38,13 @@ export const App = () => {
           {/* <DrinkButtons drinkOne={tea.name} drinkTwo={coffee.name} /> */}
           <p>Please select a drink</p>
           <DrinkSearch clickFn={setUserDrink} />
-          <DrinkList clickFn={setUserDrink} />
+          {/* <DrinkList clickFn={setUserDrink} /> // I commented this because it was causing an error.
+          Direct inclusion of DrinkList in App was redundant and possibly incorrect because App wasn't passing 
+          the required drinks prop to DrinkList, leading to issues. Removing it and letting DrinkSearch handle 
+          the rendering and logic for DrinkList simplifies the data flow and ensures components receive the correct props.
+          DrinkSearch acts as an intermediary that correctly manages and passes data to DrinkList, 
+          ensuring the app functions as intended. This structure avoids direct dependency on App to manage the state 
+          and props for DrinkList, streamlining the component hierarchy and data handling.*/}
         </>
       )}
     </div>

@@ -10,6 +10,7 @@ export const DrinkChoice = ({ drink }) => {
           that is the reason of the {{...}}    */}
           {/* Additional paragraph */}
           <p>Your {drink.name} will be ready in a few minutes.</p>
+         
         </>
     );
 };
